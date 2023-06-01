@@ -1,0 +1,38 @@
+{
+  "name": "e13-homework",
+  "version": "1.0.0",
+  "description": "Module E13 Home work",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config config/webpack.config.js",
+    "start:dev": "webpack serve --config config/webpack.dev.js",
+    "prepare": "husky install",
+    "lint": "eslint src/*.js & stylelint src/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iron0120/ModuleE13-Homework.git"
+  },
+  "author": "iron0120",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^5.5.1",
+    "husky": "^8.0.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-webpack-plugin": "^4.1.1",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
+  }
+}
