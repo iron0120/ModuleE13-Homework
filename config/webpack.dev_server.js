@@ -1,23 +1,29 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        main: path.resolve(__dirname, '../src/index.js'),
+    },
+    devtool: 'inline-source-map',
     devServer: {
-        static: './dist',
+        static: {
+            directory: path.resolve(__dirname, "../dist"),
+        },
+        hot: true,
+        port: 8080
     },
     output: {
+        path: path.resolve(__dirname, '../dist'),
         filename: "main.js"
     },
     plugins: [
         new MiniCssExtractPlugin(),
-        new ESLintPlugin(),
-        new StylelintPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Development',
+            template: "./src/index.pug",
+            filename: "index1.html"
         })
     ],
     module: {
